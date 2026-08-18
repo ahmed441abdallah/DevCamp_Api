@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Devworks Bootcamp",
+    "slug": "devworks-bootcamp",
+    "description": "Is coding your passion? Codemasters will give you the skills and the tools to become the best developer possible. We specialize in full stack web development and data science",
+    "website": "https://devworks.com",
+    "phone": "(111) 111-1111",
+    "address": "233 Bay State Rd Boston MA 02215",
+    "caarers": ["Web Development", "UI/UX", "Business"],
+    "averageRating": 8,
+    "cost": 10000,
+    "photo": "no-photo.jpg",
+    "housing": true
+  },
+  {
+    "name": "ModernTech Bootcamp",
+    "slug": "moderntech-bootcamp",
+    "description": "ModernTech has one goal, and that is to make you a rockstar developer and/or designer with a six figure salary. We teach both development and UI/UX",
+    "website": "https://moderntech.com",
+    "phone": "(222) 222-2222",
+    "address": "220 Pawtucket St, Lowell, MA 01854",
+    "caarers": ["Web Development", "UI/UX", "Mobile Development"],
+    "averageRating": 7,
+    "cost": 9000,
+    "photo": "no-photo.jpg",
+    "housing": false
+  },
+  {
+    "name": "Codemasters",
+    "slug": "codemasters",
+    "description": "Is coding your passion? Codemasters will give you the skills and the tools to become the best developer possible. We specialize in front end and full stack web development",
+    "website": "https://codemasters.com",
+    "phone": "(333) 333-3333",
+    "address": "85 South Prospect Street Burlington VT 05405",
+    "caarers": ["Web Development", "UI/UX", "Mobile Development"],
+    "averageRating": 6,
+    "cost": 8000,
+    "photo": "no-photo.jpg",
+    "housing": false
+  },
+  {
+    "name": "Devcentral Bootcamp",
+    "slug": "devcentral-bootcamp",
+    "description": "Is coding your passion? Devcentral will give you the skills and the tools to become the best developer possible.",
+    "website": "https://devcentral.com",
+    "phone": "(444) 444-4444",
+    "address": "45 Upper College Rd Kingston RI 02881",
+    "caarers": ["Mobile Development", "Data Science", "Business"],
+    "averageRating": 9,
+    "cost": 12000,
+    "photo": "no-photo.jpg",
+    "housing": true
+  },
+  {
+    "name": "DataForge Academy",
+    "slug": "dataforge-academy",
+    "description": "DataForge Academy specializes in Data Science and Business intelligence. Learn machine learning, analytics, and data engineering from industry professionals.",
+    "website": "https://dataforge.io",
+    "phone": "(555) 555-5555",
+    "address": "100 Tech Avenue, San Francisco, CA 94105",
+    "caarers": ["Data Science", "Business", "Other"],
+    "averageRating": 10,
+    "cost": 15000,
+    "photo": "no-photo.jpg",
+    "housing": true
+  }
+]

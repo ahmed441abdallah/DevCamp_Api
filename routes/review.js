@@ -1,0 +1,12 @@
+import express from "express";
+import { getReviews, createReview, getReview, updateReview, deleteReview } from "../controllers/review.js";
+import { advancedResults } from "../middlewares/advancedResults.js";
+import Review from "../models/Review.js";
+import { protect } from "../middlewares/auth.js";
+const router = express.Router({ mergeParams: true });
+router.get("/", advancedResults(Review), getReviews);
+router.post("/:bootcampId", protect, createReview);
+router.get("/:id", getReview);
+router.put("/:id", protect, updateReview);
+router.delete("/:id", protect, deleteReview);
+export default router;
