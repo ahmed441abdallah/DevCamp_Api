@@ -1,4 +1,4 @@
-# DevCamp API 🚀
+# DevCamp API 
 
 > A feature-rich RESTful API for managing coding bootcamps, built with **Node.js**, **Express 5**, and **MongoDB**.
 
@@ -9,7 +9,7 @@
 
 ---
 
-## 📋 Table of Contents
+##  Table of Contents
 
 - [Features](#-features)
 - [Tech Stack](#-tech-stack)
@@ -23,23 +23,23 @@
 
 ---
 
-## ✨ Features
+##  Features
 
-- 🏕️ **Bootcamp Management** — Full CRUD with geolocation support and photo upload
-- 📚 **Course Management** — Nested under bootcamps with ownership control
-- 👤 **Authentication** — JWT-based auth with cookies, register/login/logout
-- 🔑 **Password Recovery** — Forgot/reset password via email
-- ⭐ **Reviews & Ratings** — Users can review bootcamps with average rating calculation
-- 📋 **Enrollment System** — Users enroll in bootcamps; publishers approve or reject
-- ❤️ **Wishlist** — Users save bootcamps to their personal wishlist
-- 👑 **Role-Based Access Control** — `user`, `publisher`, and `admin` roles
-- 🔍 **Advanced Filtering** — Filter, sort, select fields, and paginate any list endpoint
-- 📍 **Geosearch** — Find bootcamps within a radius using ZIP code
-- 🛡️ **Security Hardened** — Helmet, XSS, HPP, Mongo Sanitization, Rate Limiting
+-  **Bootcamp Management** — Full CRUD with geolocation support and photo upload
+-  **Course Management** — Nested under bootcamps with ownership control
+-  **Authentication** — JWT-based auth with cookies, register/login/logout
+-  **Password Recovery** — Forgot/reset password via email
+-  **Reviews & Ratings** — Users can review bootcamps with average rating calculation
+-  **Enrollment System** — Users enroll in bootcamps; publishers approve or reject
+-  **Wishlist** — Users save bootcamps to their personal wishlist
+-  **Role-Based Access Control** — `user`, `publisher`, and `admin` roles
+-  **Advanced Filtering** — Filter, sort, select fields, and paginate any list endpoint
+-  **Geosearch** — Find bootcamps within a radius using ZIP code
+-  **Security Hardened** — Helmet, XSS, HPP, Mongo Sanitization, Rate Limiting
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
@@ -55,7 +55,7 @@
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 DevCamp/
@@ -93,7 +93,7 @@ DevCamp/
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -152,7 +152,7 @@ GEOCODER_API_KEY=your_geocoder_api_key
 
 ---
 
-## ▶️ Running the Server
+##  Running the Server
 
 ```bash
 # Development (with nodemon hot-reload)
@@ -176,11 +176,11 @@ node seeder.js -d
 
 ---
 
-## 📡 API Overview
+##  API Overview
 
 > **Base URL:** `http://localhost:3000/api/v1`
 
-For the full detailed API documentation including all endpoints, request/response bodies, and error codes, see 👉 **[api_documentation.md](./api_documentation.md)**
+For the full detailed API documentation including all endpoints, request/response bodies, and error codes, see  **[api_documentation.md](./api_documentation.md)**
 
 ### Quick Reference
 
@@ -218,7 +218,7 @@ GET /api/v1/bootcamps?careers[in]=Web Development
 
 ---
 
-## 🛡️ Security
+##  Security
 
 The following security measures are applied globally:
 
@@ -233,7 +233,7 @@ The following security measures are applied globally:
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
 
