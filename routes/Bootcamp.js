@@ -1,4 +1,4 @@
-import { getBootcamps, getBootcamp, createBootcamp, updateBootcamp, deleteBootcamp, getBootcampsInRadius } from "../controllers/Bootcamp.js";
+import { getBootcamps, getBootcamp, createBootcamp, updateBootcamp, deleteBootcamp, getBootcampsInRadius, getBootcampStatistics } from "../controllers/Bootcamp.js";
 import BootCamp from "../models/Bootcamp.js";
 import express from "express";
 const router = express.Router();
@@ -16,5 +16,6 @@ router.route('/').get(advancedResults(BootCamp, "courses user reviews"), getBoot
 router.route('/radius/:zip/:distance').get(getBootcampsInRadius)
 router.route('/:id').get(getBootcamp).put(protect, authorize("publisher"), updateBootcamp).delete(protect, authorize("publisher"), deleteBootcamp);
 router.route('/:id/photo').put(protect, authorize("publisher"), uploadPhoto);
+router.route('/:id/statistics').get(getBootcampStatistics);
 
 export default router;

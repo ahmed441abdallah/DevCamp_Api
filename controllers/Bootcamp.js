@@ -1,11 +1,14 @@
 
+import mongoose from "mongoose";
 import BootCamp from "../models/Bootcamp.js";
 import { catchAsync } from "../utils/catchAsync.js";
 import geocoder from "../utils/geocoder.js";
 import { validateBootcamp, validateUpdateBootcamp } from "../validations/schemas/bootcamp.schema.js";
 import path from "path";
 import { fileURLToPath } from "url";
-
+import Course from "../models/Course.js";
+import Review from "../models/Review.js";
+import Enrollment from "../models/Enrollment.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 // desc GET all bootcamps
@@ -128,4 +131,34 @@ export const uploadPhoto = catchAsync(async (req, res) => {
         res.status(200).json({ success: true, data: photo.name })
     })
 });
-export { getBootcamps, getBootcamp, createBootcamp, updateBootcamp, deleteBootcamp, getBootcampsInRadius };
+// desc Get Bootcamp Statistics
+// @route GET /api/v1/bootcamps/:id/statistics
+// @access public
+const getBootcampStatistics = catchAsync(async (req, res) => {
+    const bootcampId = new mongoose.Types.ObjectId(req.params.id);
+    // 1. Make sure the bootcamp exists
+    const bootcamp = await BootCamp.findById(bootcampId);
+    if (!bootcamp) {
+        return res.status(404).json({ success: false, message: "Bootcamp not found" });
+    }
+
+    const [totalStudents, pendingEnrollments, totalCourses] = await Promise.all([
+        Enrollment.countDocuments({ bootcamp: bootcampId, status: "approved" }),
+        Enrollment.countDocuments({ bootcamp: bootcampId, status: "pending" }),
+        Course.countDocuments({ bootcamp: bootcampId }),
+    ]);
+    res.status(200).json({
+        success: true,
+        data: {
+            bootcamp: {
+                _id: bootcamp._id,
+                name: bootcamp.name
+            },
+            totalStudents,
+            pendingEnrollments,
+            totalCourses,
+        }
+    });
+});
+
+export { getBootcamps, getBootcamp, createBootcamp, updateBootcamp, deleteBootcamp, getBootcampsInRadius, getBootcampStatistics };

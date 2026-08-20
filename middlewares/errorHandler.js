@@ -10,9 +10,14 @@ export const globalErrorHandler = (err, req, res, next) => {
     // mongoose duplicate key 
     if (err.code === 11000) {
         let message = "Duplicate field value entered";
-        // Check if the duplicate error is from the compound index on reviews
         if (err.keyPattern && err.keyPattern.bootcamp && err.keyPattern.user) {
-            message = "You already have reviewed this bootcamp";
+            // Both Review and Enrollment have { user, bootcamp } compound index
+            // Distinguish by the collection name embedded in the error message
+            if (err.message && err.message.toLowerCase().includes("enrollment")) {
+                message = "You are already enrolled in this bootcamp";
+            } else {
+                message = "You have already reviewed this bootcamp";
+            }
         } else if (err.keyPattern && err.keyPattern.name) {
             message = "Bootcamp already exists";
         }
